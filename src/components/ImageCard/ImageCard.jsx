@@ -1,3 +1,5 @@
+import s from "./ImageCard.module.css";
+
 const ImageCard = ({ image, onImageClick }) => {
     return (
         <div>
@@ -5,6 +7,7 @@ const ImageCard = ({ image, onImageClick }) => {
                 src={image.urls.small}
                 alt={image.description}
                 onClick={() => onImageClick(image)}
+                className={s.image}
             />
         </div>
     )

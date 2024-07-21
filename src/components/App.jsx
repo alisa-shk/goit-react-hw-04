@@ -15,7 +15,7 @@ const App = () => {
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState("");
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState({});
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const handleSearch = async (query) => {
     setPage(1);
@@ -54,7 +54,6 @@ const App = () => {
 
   const closeModal = () => {
     setModalIsOpen(false);
-    setSelectedImage({});
   };
 
   return (

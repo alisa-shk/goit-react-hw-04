@@ -1,23 +1,5 @@
-// import { Formik, Form, Field, ErrorMessage } from "formik";
-
-// const SearchBar = () => {
-//     return (
-//         <header>
-//             <Formik>
-//                 <Form>
-//                     <div>
-//                         <Field type="text" name="text" autoComplete="off" autoFocus placeholder="Search images and photos"></Field>
-//                         <ErrorMessage name="text" component="div"></ErrorMessage>
-//                     </div>
-//                     <button type="submit">Search</button>
-//                 </Form>
-//             </Formik>
-//         </header>
-//     );
-// };
-
-
 import toast, { Toaster } from 'react-hot-toast';
+import s from "./SearchBar.module.css";
 
 const SearchBar = ({ onSearch }) => {
     const handleSubmit = (e) => {
@@ -31,18 +13,19 @@ const SearchBar = ({ onSearch }) => {
         form.reset();
     }
     return (
-        <header>
-            <form onSubmit={handleSubmit}>
+        <header className={s.searchbar}>
+            <form onSubmit={handleSubmit} className={s.form}>
                 <input
+                    className={s.input}
                     name="query"
                     type="text"
                     autoComplete="off"
                     autoFocus
                     placeholder="Search images and photos"
                 />
-                <Toaster/>
-                <button type="submit">Search</button>
-                </form>
+                <button type="submit" className={s.btn}>Search</button>
+            </form>
+            <Toaster/>
         </header>
     );
 };
